@@ -1,0 +1,9 @@
+To report security issues send an email to taha@azzaoui.org
+
+You can use the PGP key below to communicate sensitive information.
+
+PGP Fingerprint: A30956FCA00E435B6DFE266A8EF1FA4B9D556249
+
+To import with GnuPG:
+
+	gpg --keyserver hkps://keys.openpgp.org --recv-keys A30956FCA00E435B6DFE266A8EF1FA4B9D556249

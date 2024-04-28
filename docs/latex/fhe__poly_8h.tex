@@ -1,0 +1,349 @@
+\hypertarget{fhe__poly_8h}{}\doxysection{include/fhe\+\_\+poly.h File Reference}
+\label{fhe__poly_8h}\index{include/fhe\_poly.h@{include/fhe\_poly.h}}
+{\ttfamily \#include \char`\"{}fhe\+\_\+ring.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Main Polynomial type used to represent polynomials over $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} \mbox{\hyperlink{fhe__poly_8h_a6f0764446a7d57267a82c6a5ba5f48fb}{poly\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Main Polynomial type used to represent polynomials over $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fhe__poly_8h_aa2fd0b0531f5e5563f6fccd93ff01127}{poly\+\_\+zero}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Initialize the zero polynomial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_adc4bc5429ff768846c4b829560e8bed3}{poly\+\_\+encode}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, const \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$const u, \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Encode a polynomial into its CRT representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_abf2c559b0489922d9e790b30aa03bd1c}{poly\+\_\+decode}} (\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$out, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const p, \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} t)
+\begin{DoxyCompactList}\small\item\em Decode a polynomial into its original form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_ad92a4c9c41abfd8fedada4b9fd1347d0}{poly\+\_\+ntt}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Convert to NTT form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a62a571fc87dd74a3f40a46c4060f8d5a}{poly\+\_\+intt}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Convert back from NTT form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a0be6af0e5d59a291b9d049d072a39297}{poly\+\_\+clone}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$dst, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const src)
+\begin{DoxyCompactList}\small\item\em Clone a polynomial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a55b44eb459f0aedd355bf1bc7b616338}{poly\+\_\+cmul}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$out, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const in, \mbox{\hyperlink{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}{int\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Constant multiplication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a1094068aabbcc5d275c55f24cd62c495}{poly\+\_\+rand}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$out, \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}} d)
+\begin{DoxyCompactList}\small\item\em Sample a random polynomial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a467965041a721858cc166fb4a0cfde6a}{poly\+\_\+neg}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Negate a polynomial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a8107767e738e254ae1c611383de74bbf}{poly\+\_\+add}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Polynomial addition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a133587a8012f7107f72bd0d8f96e24e4}{poly\+\_\+sub}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Polynomial subtraction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a7457e694f74fe540afd3090519bdd6ef}{poly\+\_\+mul}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Polynomial multiplication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a2dfb7bf38877914d116055e51cb72341}{poly\+\_\+serialize}} (unsigned char $\ast$buf, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const p)
+\begin{DoxyCompactList}\small\item\em Serialize a polynomial into a byte stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_ab77246782d321234c4520710a6b59cad}{poly\+\_\+deserialize}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p, const unsigned char $\ast$const buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a polynomial from a byte stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fhe__poly_8h_a10268c2dbf40959021c9b434c12d808a}{poly\+\_\+cmp}} (const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Test two polynomials for equality Returns 1 if polynomials are equal, 0 otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__poly_8h_a9e85b160adf40e93b417e9ba9e6d39b4}{poly\+\_\+free}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Destroy a Polynomial Free any memory allocated by the polynomial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of the \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} type, which implements arithmetic over the cyclotomic polynomial ring $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fhe__poly_8h_a6f0764446a7d57267a82c6a5ba5f48fb}\label{fhe__poly_8h_a6f0764446a7d57267a82c6a5ba5f48fb}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_t@{poly\_t}}
+\index{poly\_t@{poly\_t}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_t}{poly\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}}}
+
+
+
+Main Polynomial type used to represent polynomials over $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. 
+
+Polynomials are represented using the ring isomorphism provided by the Chinese Remainder Theorem.
+
+Namely, a polynomial with coefficients mod $M$ is decomposed into $n$ polynomials with coefficients mod $m_i$ of degree $d$ where $ M = \prod_i m_i $.
+
+Residues $m_i$ are pairwise coprime word-\/sized integers (typically between 32-\/60 bits) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fhe__poly_8h_a8107767e738e254ae1c611383de74bbf}\label{fhe__poly_8h_a8107767e738e254ae1c611383de74bbf}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_add@{poly\_add}}
+\index{poly\_add@{poly\_add}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_add()}{poly\_add()}}
+{\footnotesize\ttfamily void poly\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Polynomial addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & Resulting sum \\
+\hline
+ & {\em a} & Addend \\
+\hline
+ & {\em b} & Addend \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a0be6af0e5d59a291b9d049d072a39297}\label{fhe__poly_8h_a0be6af0e5d59a291b9d049d072a39297}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_clone@{poly\_clone}}
+\index{poly\_clone@{poly\_clone}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_clone()}{poly\_clone()}}
+{\footnotesize\ttfamily void poly\+\_\+clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{src }\end{DoxyParamCaption})}
+
+
+
+Clone a polynomial. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Destination polynomial \\
+\hline
+ & {\em src} & Source polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a10268c2dbf40959021c9b434c12d808a}\label{fhe__poly_8h_a10268c2dbf40959021c9b434c12d808a}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_cmp@{poly\_cmp}}
+\index{poly\_cmp@{poly\_cmp}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_cmp()}{poly\_cmp()}}
+{\footnotesize\ttfamily int poly\+\_\+cmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Test two polynomials for equality Returns 1 if polynomials are equal, 0 otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Polynomial \\
+\hline
+{\em b} & Polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a55b44eb459f0aedd355bf1bc7b616338}\label{fhe__poly_8h_a55b44eb459f0aedd355bf1bc7b616338}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_cmul@{poly\_cmul}}
+\index{poly\_cmul@{poly\_cmul}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_cmul()}{poly\_cmul()}}
+{\footnotesize\ttfamily void poly\+\_\+cmul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{out,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{in,  }\item[{\mbox{\hyperlink{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}{int\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Constant multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em out} & Resulting polynomial \\
+\hline
+ & {\em in} & Input polynomial \\
+\hline
+ & {\em c} & Constant multiplier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_abf2c559b0489922d9e790b30aa03bd1c}\label{fhe__poly_8h_abf2c559b0489922d9e790b30aa03bd1c}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_decode@{poly\_decode}}
+\index{poly\_decode@{poly\_decode}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_decode()}{poly\_decode()}}
+{\footnotesize\ttfamily void poly\+\_\+decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$}]{out,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{p,  }\item[{\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Decode a polynomial into its original form. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em out} & decoded polynomial \\
+\hline
+ & {\em p} & encoded polynomial \\
+\hline
+ & {\em t} & modulus \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_ab77246782d321234c4520710a6b59cad}\label{fhe__poly_8h_ab77246782d321234c4520710a6b59cad}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_deserialize@{poly\_deserialize}}
+\index{poly\_deserialize@{poly\_deserialize}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_deserialize()}{poly\_deserialize()}}
+{\footnotesize\ttfamily void poly\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p,  }\item[{const unsigned char $\ast$const}]{buf }\end{DoxyParamCaption})}
+
+
+
+Deserialize a polynomial from a byte stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em p} & Deserialized polynomial \\
+\hline
+ & {\em buf} & Serialized polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_adc4bc5429ff768846c4b829560e8bed3}\label{fhe__poly_8h_adc4bc5429ff768846c4b829560e8bed3}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_encode@{poly\_encode}}
+\index{poly\_encode@{poly\_encode}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_encode()}{poly\_encode()}}
+{\footnotesize\ttfamily void poly\+\_\+encode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{const \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$const}]{u,  }\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Encode a polynomial into its CRT representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Underlying ring \\
+\hline
+ & {\em u} & Polynomial coefficients \\
+\hline
+\mbox{\texttt{ out}}  & {\em p} & Encoded polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a9e85b160adf40e93b417e9ba9e6d39b4}\label{fhe__poly_8h_a9e85b160adf40e93b417e9ba9e6d39b4}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_free@{poly\_free}}
+\index{poly\_free@{poly\_free}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_free()}{poly\_free()}}
+{\footnotesize\ttfamily void poly\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Destroy a Polynomial Free any memory allocated by the polynomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a62a571fc87dd74a3f40a46c4060f8d5a}\label{fhe__poly_8h_a62a571fc87dd74a3f40a46c4060f8d5a}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_intt@{poly\_intt}}
+\index{poly\_intt@{poly\_intt}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_intt()}{poly\_intt()}}
+{\footnotesize\ttfamily void poly\+\_\+intt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Convert back from NTT form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a7457e694f74fe540afd3090519bdd6ef}\label{fhe__poly_8h_a7457e694f74fe540afd3090519bdd6ef}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_mul@{poly\_mul}}
+\index{poly\_mul@{poly\_mul}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_mul()}{poly\_mul()}}
+{\footnotesize\ttfamily void poly\+\_\+mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Polynomial multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & Resulting product \\
+\hline
+ & {\em a} & multiplicand \\
+\hline
+ & {\em b} & multiplier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a467965041a721858cc166fb4a0cfde6a}\label{fhe__poly_8h_a467965041a721858cc166fb4a0cfde6a}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_neg@{poly\_neg}}
+\index{poly\_neg@{poly\_neg}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_neg()}{poly\_neg()}}
+{\footnotesize\ttfamily void poly\+\_\+neg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Negate a polynomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_ad92a4c9c41abfd8fedada4b9fd1347d0}\label{fhe__poly_8h_ad92a4c9c41abfd8fedada4b9fd1347d0}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_ntt@{poly\_ntt}}
+\index{poly\_ntt@{poly\_ntt}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_ntt()}{poly\_ntt()}}
+{\footnotesize\ttfamily void poly\+\_\+ntt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Convert to NTT form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Polynomial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a1094068aabbcc5d275c55f24cd62c495}\label{fhe__poly_8h_a1094068aabbcc5d275c55f24cd62c495}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_rand@{poly\_rand}}
+\index{poly\_rand@{poly\_rand}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_rand()}{poly\_rand()}}
+{\footnotesize\ttfamily void poly\+\_\+rand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{out,  }\item[{\mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}}}]{d }\end{DoxyParamCaption})}
+
+
+
+Sample a random polynomial. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Base ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em out} & Random polynomial \\
+\hline
+ & {\em d} & Sampling distribution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a2dfb7bf38877914d116055e51cb72341}\label{fhe__poly_8h_a2dfb7bf38877914d116055e51cb72341}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_serialize@{poly\_serialize}}
+\index{poly\_serialize@{poly\_serialize}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_serialize()}{poly\_serialize()}}
+{\footnotesize\ttfamily void poly\+\_\+serialize (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{p }\end{DoxyParamCaption})}
+
+
+
+Serialize a polynomial into a byte stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em buf} & Serialized polynomial \\
+\hline
+ & {\em p} & Polynomial to be serialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_a133587a8012f7107f72bd0d8f96e24e4}\label{fhe__poly_8h_a133587a8012f7107f72bd0d8f96e24e4}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_sub@{poly\_sub}}
+\index{poly\_sub@{poly\_sub}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_sub()}{poly\_sub()}}
+{\footnotesize\ttfamily void poly\+\_\+sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Polynomial subtraction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & Resulting difference \\
+\hline
+ & {\em a} & Minuend \\
+\hline
+ & {\em b} & Subtrahend \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__poly_8h_aa2fd0b0531f5e5563f6fccd93ff01127}\label{fhe__poly_8h_aa2fd0b0531f5e5563f6fccd93ff01127}} 
+\index{fhe\_poly.h@{fhe\_poly.h}!poly\_zero@{poly\_zero}}
+\index{poly\_zero@{poly\_zero}!fhe\_poly.h@{fhe\_poly.h}}
+\doxysubsubsection{\texorpdfstring{poly\_zero()}{poly\_zero()}}
+{\footnotesize\ttfamily int poly\+\_\+zero (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Initialize the zero polynomial. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Underlying ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em p} & Zero polynomial \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,56 @@
+\hypertarget{fhe__config_8h_source}{}\doxysection{fhe\+\_\+config.\+h}
+\label{fhe__config_8h_source}\index{include/fhe\_config.h@{include/fhe\_config.h}}
+\mbox{\hyperlink{fhe__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// libfhe}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// This program is free software: you can redistribute it and/or modify}}
+\DoxyCodeLine{4 \textcolor{comment}{// it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{5 \textcolor{comment}{// the Free Software Foundation, either version 3 of the License, or}}
+\DoxyCodeLine{6 \textcolor{comment}{// (at your option) any later version.}}
+\DoxyCodeLine{7 \textcolor{comment}{//}}
+\DoxyCodeLine{8 \textcolor{comment}{// This program is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{9 \textcolor{comment}{// but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{10 \textcolor{comment}{// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{11 \textcolor{comment}{// GNU General Public License for more details.}}
+\DoxyCodeLine{12 \textcolor{comment}{//}}
+\DoxyCodeLine{13 \textcolor{comment}{// You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{14 \textcolor{comment}{// along with this program.  If not, see <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{15 \textcolor{comment}{//}}
+\DoxyCodeLine{16 \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{22 \textcolor{comment}{}\textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef FHE\_CONFIG\_H}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define FHE\_CONFIG\_H}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifdef \_OPENMP}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <omp.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define OMP\_FOR \_\_pragma(omp parallel for)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define OMP\_FOR \_Pragma("{}omp parallel for"{}})}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define OMP\_FOR}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} int64\_t \mbox{\hyperlink{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}{int\_t}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} uint64\_t \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\_t}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} \_\_int128\_t \mbox{\hyperlink{fhe__config_8h_a03642fb6b38a77cb6f084302705041be}{int\_dt}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \_\_uint128\_t \mbox{\hyperlink{fhe__config_8h_a9859a8d27540e0baa545df6472805c49}{uint\_dt}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}} \{}
+\DoxyCodeLine{65   UNIFORM = 0,}
+\DoxyCodeLine{66   TERNARY,}
+\DoxyCodeLine{67   ERR,}
+\DoxyCodeLine{68 \} \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FHE\_CONFIG\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
