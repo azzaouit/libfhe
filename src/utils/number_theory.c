@@ -41,7 +41,7 @@ int is_prime(uint_t p) {
   s = p - 1;
 
 #ifdef _WIN64
-  x = _tzcnt_u64(x);
+  x = _tzcnt_u64(s);
 #else
   x = __builtin_ctzll(s);
 #endif

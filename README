@@ -20,7 +20,7 @@ If you use libfhe in your work, you can use the following bibtex entry to cite t
     @software{libfhe,
       author = {{Taha Azzaoui}},
       title = {libfhe},
-      url = {https://libfhe.org},
+      url = {https://github.com/azzaouit/libfhe},
       version = {0.0.0},
       date = {2023-07-19},
     }

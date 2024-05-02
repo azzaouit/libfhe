@@ -37,5 +37,3 @@ def test_ciphertext():
     ct2 = k.ciphertext()
     ct2.from_bytes(buf)
     assert ct1 == ct2
-
-

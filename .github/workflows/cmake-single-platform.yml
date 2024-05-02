@@ -1,0 +1,36 @@
+name: CMake on a single platform
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Deps
+      run: sudo apt update && sudo apt install -y libgmp-dev libmpfr-dev libmpc-dev
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+    - name: Install
+      run: sudo make install -C ${{github.workspace}}/build
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest -C ${{env.BUILD_TYPE}}
+    - name: Python Deps
+      working-directory: ${{github.workspace}}/python
+      run: pip install -r requirements.txt
+    - name: Python Install
+      working-directory: ${{github.workspace}}/python
+      run: python setup.py install --user
+    - name: Pytest
+      working-directory: ${{github.workspace}}/python/tests
+      run: LD_LIBRARY_PATH=/usr/local/lib py.test
