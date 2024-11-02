@@ -1,0 +1,11 @@
+build/
+*.so
+*.dylib
+
+python/**/*.c
+python/dist/
+python/venv
+python/*.egg-info
+python/.eggs
+python/**/__pycache__
+venv/
