@@ -1,0 +1,34 @@
+\hypertarget{fhe__config_8h}{}\doxysection{include/fhe\+\_\+config.h File Reference}
+\label{fhe__config_8h}\index{include/fhe\_config.h@{include/fhe\_config.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}\label{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}} 
+typedef int64\+\_\+t {\bfseries int\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Default integer width is 64 bits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}\label{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}} 
+typedef uint64\+\_\+t {\bfseries uint\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Default unsigned integer width is 64 bits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__config_8h_a03642fb6b38a77cb6f084302705041be}\label{fhe__config_8h_a03642fb6b38a77cb6f084302705041be}} 
+typedef \+\_\+\+\_\+int128\+\_\+t {\bfseries int\+\_\+dt}
+\begin{DoxyCompactList}\small\item\em Default double integer width is 128 bits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__config_8h_a9859a8d27540e0baa545df6472805c49}\label{fhe__config_8h_a9859a8d27540e0baa545df6472805c49}} 
+typedef \+\_\+\+\_\+uint128\+\_\+t {\bfseries uint\+\_\+dt}
+\begin{DoxyCompactList}\small\item\em Default double unsigned integer width is 128 bits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__config_8h_a6bdd679abf7af0e92aa2a92721792d1a}\label{fhe__config_8h_a6bdd679abf7af0e92aa2a92721792d1a}} 
+typedef enum \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}} {\bfseries DISTRIBUTION}
+\begin{DoxyCompactList}\small\item\em Enum determines sampling distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}\label{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}} 
+enum \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}} \{ {\bfseries UNIFORM} = 0
+, {\bfseries TERNARY}
+, {\bfseries ERR}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum determines sampling distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains compile time configuration options for parametrizing builds. 

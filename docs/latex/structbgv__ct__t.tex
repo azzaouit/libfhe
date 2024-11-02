@@ -1,0 +1,30 @@
+\hypertarget{structbgv__ct__t}{}\doxysection{bgv\+\_\+ct\+\_\+t Struct Reference}
+\label{structbgv__ct__t}\index{bgv\_ct\_t@{bgv\_ct\_t}}
+
+
+BGV Ciphertext consists of $n$ polynomials over the ciphertext ring $R_q = Z_q[x]/<x^d + 1>$.  
+
+
+
+
+{\ttfamily \#include $<$fhe\+\_\+bgv.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbgv__ct__t_ae7c732eb1787afe7ab702907a0b7788b}\label{structbgv__ct__t_ae7c732eb1787afe7ab702907a0b7788b}} 
+size\+\_\+t {\bfseries n}
+\begin{DoxyCompactList}\small\item\em Number of polynomials. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbgv__ct__t_aa0ef78a4eb6b9576646e6c2b71b6bec7}\label{structbgv__ct__t_aa0ef78a4eb6b9576646e6c2b71b6bec7}} 
+\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$ {\bfseries c}
+\begin{DoxyCompactList}\small\item\em $n$ Ciphertext polynomials $c_i \in R_q$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BGV Ciphertext consists of $n$ polynomials over the ciphertext ring $R_q = Z_q[x]/<x^d + 1>$. 
+
+Note\+: The Ciphertext size $n$ increases by one after every multiplication. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{fhe__bgv_8h}{fhe\+\_\+bgv.\+h}}\end{DoxyCompactItemize}

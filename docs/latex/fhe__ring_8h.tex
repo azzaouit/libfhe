@@ -1,0 +1,64 @@
+\hypertarget{fhe__ring_8h}{}\doxysection{include/fhe\+\_\+ring.h File Reference}
+\label{fhe__ring_8h}\index{include/fhe\_ring.h@{include/fhe\_ring.h}}
+{\ttfamily \#include \char`\"{}fhe\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gmp.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structring__t}{ring\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Main Ring type used to define a polynomial ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fhe__ring_8h_afdfcdcf83637693b75301a6c8034407f}\label{fhe__ring_8h_afdfcdcf83637693b75301a6c8034407f}} 
+typedef struct \mbox{\hyperlink{structring__t}{ring\+\_\+t}} {\bfseries ring\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Main Ring type used to define a polynomial ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fhe__ring_8h_a8f690aae0109d256deed89b9f236cc80}{ring\+\_\+init}} (\mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$r, size\+\_\+t lgd, size\+\_\+t lgq, size\+\_\+t lgm)
+\begin{DoxyCompactList}\small\item\em Initialize a polynomial ring. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__ring_8h_aee3c69155686f39487d8dff302bf011c}{ring\+\_\+free}} (\mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Destroy a polynomial ring Free any memory allocated by the polynomial ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of the \mbox{\hyperlink{structring__t}{ring\+\_\+t}} type, which implements the cyclotomic polynomial ring $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fhe__ring_8h_aee3c69155686f39487d8dff302bf011c}\label{fhe__ring_8h_aee3c69155686f39487d8dff302bf011c}} 
+\index{fhe\_ring.h@{fhe\_ring.h}!ring\_free@{ring\_free}}
+\index{ring\_free@{ring\_free}!fhe\_ring.h@{fhe\_ring.h}}
+\doxysubsubsection{\texorpdfstring{ring\_free()}{ring\_free()}}
+{\footnotesize\ttfamily void ring\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Destroy a polynomial ring Free any memory allocated by the polynomial ring. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Polynomial ring \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__ring_8h_a8f690aae0109d256deed89b9f236cc80}\label{fhe__ring_8h_a8f690aae0109d256deed89b9f236cc80}} 
+\index{fhe\_ring.h@{fhe\_ring.h}!ring\_init@{ring\_init}}
+\index{ring\_init@{ring\_init}!fhe\_ring.h@{fhe\_ring.h}}
+\doxysubsubsection{\texorpdfstring{ring\_init()}{ring\_init()}}
+{\footnotesize\ttfamily int ring\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$}]{r,  }\item[{size\+\_\+t}]{lgd,  }\item[{size\+\_\+t}]{lgq,  }\item[{size\+\_\+t}]{lgm }\end{DoxyParamCaption})}
+
+
+
+Initialize a polynomial ring. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em r} & The polynomial ring \\
+\hline
+ & {\em lgd} & The bit length of the polynomial degree \\
+\hline
+ & {\em lgq} & The bit length of the base ring modulus \\
+\hline
+ & {\em lgm} & The bit length of the CRT residues \\
+\hline
+\end{DoxyParams}

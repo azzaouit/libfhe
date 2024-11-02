@@ -1,0 +1,91 @@
+\hypertarget{fhe__bgv_8h_source}{}\doxysection{fhe\+\_\+bgv.\+h}
+\label{fhe__bgv_8h_source}\index{include/fhe\_bgv.h@{include/fhe\_bgv.h}}
+\mbox{\hyperlink{fhe__bgv_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// libfhe}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// This program is free software: you can redistribute it and/or modify}}
+\DoxyCodeLine{4 \textcolor{comment}{// it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{5 \textcolor{comment}{// the Free Software Foundation, either version 3 of the License, or}}
+\DoxyCodeLine{6 \textcolor{comment}{// (at your option) any later version.}}
+\DoxyCodeLine{7 \textcolor{comment}{//}}
+\DoxyCodeLine{8 \textcolor{comment}{// This program is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{9 \textcolor{comment}{// but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{10 \textcolor{comment}{// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{11 \textcolor{comment}{// GNU General Public License for more details.}}
+\DoxyCodeLine{12 \textcolor{comment}{//}}
+\DoxyCodeLine{13 \textcolor{comment}{// You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{14 \textcolor{comment}{// along with this program.  If not, see <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{15 \textcolor{comment}{//}}
+\DoxyCodeLine{16 \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{22 \textcolor{comment}{}\textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef FHE\_BGV\_H}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define FHE\_BGV\_H}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fhe__poly_8h}{fhe\_poly.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fhe__ring_8h}{fhe\_ring.h}}"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbgv__t}{bgv\_t}} \{}
+\DoxyCodeLine{34   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structbgv__t_a0b819c6256e5bf67d06dc22e774a869e}{t}}; }
+\DoxyCodeLine{35   \mbox{\hyperlink{structring__t}{ring\_t}} \mbox{\hyperlink{structbgv__t_a27c241b511173fca99e6eab0fe856dff}{r}}; }
+\DoxyCodeLine{36 \} \mbox{\hyperlink{fhe__bgv_8h_a54eeacd177e45699829e0b9328b3ea98}{bgv\_t}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} \{}
+\DoxyCodeLine{42   \mbox{\hyperlink{structpoly__t}{poly\_t}} \mbox{\hyperlink{structbgv__keypair__t_ab808dc2eb4db8810ee01abe3c79d61a3}{a}}; }
+\DoxyCodeLine{43   \mbox{\hyperlink{structpoly__t}{poly\_t}} \mbox{\hyperlink{structbgv__keypair__t_a285f73629559314eb4b7ead7496d0357}{b}}; }
+\DoxyCodeLine{44 \} \mbox{\hyperlink{fhe__bgv_8h_a2224fe1aa1bbec5eeda6bf06a6d99aaf}{bgv\_keypair\_t}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} \{}
+\DoxyCodeLine{50   \mbox{\hyperlink{structpoly__t}{poly\_t}} \mbox{\hyperlink{structbgv__key__t_a906c81f4f3fe6b37827672e4f4b05404}{s}};           }
+\DoxyCodeLine{51   \mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} \mbox{\hyperlink{structbgv__key__t_a3e374a2f44b22fccb4845b0a856ebe70}{pub}};  }
+\DoxyCodeLine{52   \mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} \mbox{\hyperlink{structbgv__key__t_ab235e9439e80336a31c056cf285ab1fd}{eval}}; }
+\DoxyCodeLine{53 \} \mbox{\hyperlink{fhe__bgv_8h_a1c76c179a8cd2885fdc2f5dc0e42edd7}{bgv\_key\_t}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58 \textcolor{comment}{//}}
+\DoxyCodeLine{62 \textcolor{comment}{}\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} \{}
+\DoxyCodeLine{63   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{structbgv__ct__t_ae7c732eb1787afe7ab702907a0b7788b}{n}};  }
+\DoxyCodeLine{64   \mbox{\hyperlink{structpoly__t}{poly\_t}} *\mbox{\hyperlink{structbgv__ct__t_aa0ef78a4eb6b9576646e6c2b71b6bec7}{c}}; }
+\DoxyCodeLine{65 \} \mbox{\hyperlink{fhe__bgv_8h_ac32ea9cd37a2c7af7c428f891c31a034}{bgv\_ct\_t}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{int} \mbox{\hyperlink{fhe__bgv_8h_a3aeb75e3ccac25c94c6d9d5e9c7991fe}{bgv\_init}}(\mbox{\hyperlink{structbgv__t}{bgv\_t}} *b, \textcolor{keywordtype}{size\_t} lgd, \textcolor{keywordtype}{size\_t} lgq, \textcolor{keywordtype}{size\_t} lgm, \textcolor{keywordtype}{size\_t} t);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_aea3ff4036d914dbea4596659454e1479}{bgv\_keygen}}(\textcolor{keyword}{const} \mbox{\hyperlink{structbgv__t}{bgv\_t}} *\textcolor{keyword}{const} b, \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *k);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a1895b76e7ae539ef162ee7b5643af85b}{bgv\_key\_serialize}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *\textcolor{keyword}{const} k);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a926609968b87f2aa1b2577f173fb18b8}{bgv\_key\_deserialize}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *k,}
+\DoxyCodeLine{108                          \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} buf);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a5dbaf0133588b0f19bb273d77f456de9}{bgv\_encrypt}}(\textcolor{keyword}{const} \mbox{\hyperlink{structbgv__t}{bgv\_t}} *\textcolor{keyword}{const} b, \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c,}
+\DoxyCodeLine{122                  \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} *\textcolor{keyword}{const} k, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} m);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a7b60a10b93451172998d1268817219d6}{bgv\_decrypt}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *m, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} c, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} s);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{139 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_ab9a3c9d1ed3d36d7697117eeea870823}{bgv\_free}}(\mbox{\hyperlink{structbgv__t}{bgv\_t}} *b);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{147 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a74bf638216835b4409947245567252c1}{bgv\_key\_free}}(\mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *k);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{155 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a72d24acb2b2873264728c174443deb3b}{bgv\_key\_zero}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *k);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{int} \mbox{\hyperlink{fhe__bgv_8h_a547e88b87dc107cbeadd5da27c2462f7}{bgv\_key\_cmp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__key__t}{bgv\_key\_t}}* \textcolor{keyword}{const} b);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{int} \mbox{\hyperlink{fhe__bgv_8h_a7c16cd26deb6bd06822c4c399e782343}{bgv\_ct\_init}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c, \textcolor{keywordtype}{size\_t} n);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{184 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a456dc398cbf296b2c37fee1503ed472a}{bgv\_ct\_add}}(\mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{197 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_aa59b97302ed9250ca5b4a92ca8245a44}{bgv\_ct\_mul}}(\mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} *e, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} a,}
+\DoxyCodeLine{198                 \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{208 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_aff89118a71b00f1b3610fede32679a5e}{bgv\_ct\_relin}}(\mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__keypair__t}{bgv\_keypair\_t}} *\textcolor{keyword}{const} k);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{216 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a7daab701884aa48157863e3ca1937a8e}{bgv\_ct\_serialize}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf, \textcolor{keyword}{const} \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *\textcolor{keyword}{const} c);}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{225 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_a7b0f119334c8a2d348857b164bea6a9c}{bgv\_ct\_deserialize}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c,}
+\DoxyCodeLine{226                         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{234 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__bgv_8h_ac0f91a3c571b7e73b3ccceeba77e66de}{bgv\_ct\_free}}(\mbox{\hyperlink{structbgv__ct__t}{bgv\_ct\_t}} *c);}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FHE\_BGV\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

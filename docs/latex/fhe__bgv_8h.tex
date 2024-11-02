@@ -1,0 +1,409 @@
+\hypertarget{fhe__bgv_8h}{}\doxysection{include/fhe\+\_\+bgv.h File Reference}
+\label{fhe__bgv_8h}\index{include/fhe\_bgv.h@{include/fhe\_bgv.h}}
+{\ttfamily \#include \char`\"{}fhe\+\_\+poly.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fhe\+\_\+ring.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Main BGV type used to instantiate the scheme. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Generic key pair wraps a pair of polynomials. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em BGV key pair used to encrypt, decrypt, and relinearize a ciphertext. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em BGV Ciphertext consists of $n$ polynomials over the ciphertext ring $R_q = Z_q[x]/<x^d + 1>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fhe__bgv_8h_a54eeacd177e45699829e0b9328b3ea98}\label{fhe__bgv_8h_a54eeacd177e45699829e0b9328b3ea98}} 
+typedef struct \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} {\bfseries bgv\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Main BGV type used to instantiate the scheme. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__bgv_8h_a2224fe1aa1bbec5eeda6bf06a6d99aaf}\label{fhe__bgv_8h_a2224fe1aa1bbec5eeda6bf06a6d99aaf}} 
+typedef struct \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} {\bfseries bgv\+\_\+keypair\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Generic key pair wraps a pair of polynomials. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fhe__bgv_8h_a1c76c179a8cd2885fdc2f5dc0e42edd7}\label{fhe__bgv_8h_a1c76c179a8cd2885fdc2f5dc0e42edd7}} 
+typedef struct \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} {\bfseries bgv\+\_\+key\+\_\+t}
+\begin{DoxyCompactList}\small\item\em BGV key pair used to encrypt, decrypt, and relinearize a ciphertext. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} \mbox{\hyperlink{fhe__bgv_8h_ac32ea9cd37a2c7af7c428f891c31a034}{bgv\+\_\+ct\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em BGV Ciphertext consists of $n$ polynomials over the ciphertext ring $R_q = Z_q[x]/<x^d + 1>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fhe__bgv_8h_a3aeb75e3ccac25c94c6d9d5e9c7991fe}{bgv\+\_\+init}} (\mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$b, size\+\_\+t lgd, size\+\_\+t lgq, size\+\_\+t lgm, size\+\_\+t t)
+\begin{DoxyCompactList}\small\item\em Initialize BGV scheme parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_aea3ff4036d914dbea4596659454e1479}{bgv\+\_\+keygen}} (const \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$const b, \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$k)
+\begin{DoxyCompactList}\small\item\em Generate a BGV key pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a1895b76e7ae539ef162ee7b5643af85b}{bgv\+\_\+key\+\_\+serialize}} (unsigned char $\ast$buf, const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const k)
+\begin{DoxyCompactList}\small\item\em Serialize a BGV key pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a926609968b87f2aa1b2577f173fb18b8}{bgv\+\_\+key\+\_\+deserialize}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$k, const unsigned char $\ast$const buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a BGV key pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a5dbaf0133588b0f19bb273d77f456de9}{bgv\+\_\+encrypt}} (const \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$const b, \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$const k, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const m)
+\begin{DoxyCompactList}\small\item\em Encrypt a polynomial using the BGV scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a7b60a10b93451172998d1268817219d6}{bgv\+\_\+decrypt}} (\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$m, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const c, const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const s)
+\begin{DoxyCompactList}\small\item\em Decrypt a BGV ciphertext. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_ab9a3c9d1ed3d36d7697117eeea870823}{bgv\+\_\+free}} (\mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Destroy a BGV struct. Free any memory allocated by the context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a74bf638216835b4409947245567252c1}{bgv\+\_\+key\+\_\+free}} (\mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$k)
+\begin{DoxyCompactList}\small\item\em Destroy a BGV key pair Free any memory allocated by the key generation process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a72d24acb2b2873264728c174443deb3b}{bgv\+\_\+key\+\_\+zero}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$k)
+\begin{DoxyCompactList}\small\item\em Initialize an empty key pair. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fhe__bgv_8h_a547e88b87dc107cbeadd5da27c2462f7}{bgv\+\_\+key\+\_\+cmp}} (const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Test two keys for equality. Returns 1 if keys are equal, 0 otherwise. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fhe__bgv_8h_a7c16cd26deb6bd06822c4c399e782343}{bgv\+\_\+ct\+\_\+init}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Initialize an empty BGV ciphertext. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a456dc398cbf296b2c37fee1503ed472a}{bgv\+\_\+ct\+\_\+add}} (\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Add two BGV ciphertexts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_aa59b97302ed9250ca5b4a92ca8245a44}{bgv\+\_\+ct\+\_\+mul}} (\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$e, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const a, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const b)
+\begin{DoxyCompactList}\small\item\em Multiply two BGV ciphertexts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_aff89118a71b00f1b3610fede32679a5e}{bgv\+\_\+ct\+\_\+relin}} (\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$const k)
+\begin{DoxyCompactList}\small\item\em Relinearize a BGV ciphertext in place. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a7daab701884aa48157863e3ca1937a8e}{bgv\+\_\+ct\+\_\+serialize}} (unsigned char $\ast$buf, const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const c)
+\begin{DoxyCompactList}\small\item\em Serialize a BGV ciphertext into a byte stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_a7b0f119334c8a2d348857b164bea6a9c}{bgv\+\_\+ct\+\_\+deserialize}} (const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const r, \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c, const unsigned char $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a BGV ciphertext from a byte stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fhe__bgv_8h_ac0f91a3c571b7e73b3ccceeba77e66de}{bgv\+\_\+ct\+\_\+free}} (\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Destroy a BGV ciphertext Free any memory allocated by the encryption process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of the \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} type, which implements the Brakerski-\/\+Gentry-\/\+Vaikuntanathan encryption scheme. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fhe__bgv_8h_ac32ea9cd37a2c7af7c428f891c31a034}\label{fhe__bgv_8h_ac32ea9cd37a2c7af7c428f891c31a034}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_t@{bgv\_ct\_t}}
+\index{bgv\_ct\_t@{bgv\_ct\_t}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_t}{bgv\_ct\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}}}
+
+
+
+BGV Ciphertext consists of $n$ polynomials over the ciphertext ring $R_q = Z_q[x]/<x^d + 1>$. 
+
+Note\+: The Ciphertext size $n$ increases by one after every multiplication. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fhe__bgv_8h_a456dc398cbf296b2c37fee1503ed472a}\label{fhe__bgv_8h_a456dc398cbf296b2c37fee1503ed472a}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_add@{bgv\_ct\_add}}
+\index{bgv\_ct\_add@{bgv\_ct\_add}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_add()}{bgv\_ct\_add()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Add two BGV ciphertexts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & The encryption of a + b \\
+\hline
+ & {\em a} & BGV ciphertext addend \\
+\hline
+ & {\em b} & BGV ciphertext addend\\
+\hline
+\end{DoxyParams}
+Note\+: Any of a, b, or c may overlap \mbox{\Hypertarget{fhe__bgv_8h_a7b0f119334c8a2d348857b164bea6a9c}\label{fhe__bgv_8h_a7b0f119334c8a2d348857b164bea6a9c}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_deserialize@{bgv\_ct\_deserialize}}
+\index{bgv\_ct\_deserialize@{bgv\_ct\_deserialize}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_deserialize()}{bgv\_ct\_deserialize()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+deserialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{const unsigned char $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Deserialize a BGV ciphertext from a byte stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Polynomial ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em c} & Deserialized ciphertext \\
+\hline
+ & {\em buf} & Serialized ciphertext byte stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_ac0f91a3c571b7e73b3ccceeba77e66de}\label{fhe__bgv_8h_ac0f91a3c571b7e73b3ccceeba77e66de}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_free@{bgv\_ct\_free}}
+\index{bgv\_ct\_free@{bgv\_ct\_free}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_free()}{bgv\_ct\_free()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Destroy a BGV ciphertext Free any memory allocated by the encryption process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & BGV ciphertext \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a7c16cd26deb6bd06822c4c399e782343}\label{fhe__bgv_8h_a7c16cd26deb6bd06822c4c399e782343}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_init@{bgv\_ct\_init}}
+\index{bgv\_ct\_init@{bgv\_ct\_init}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_init()}{bgv\_ct\_init()}}
+{\footnotesize\ttfamily int bgv\+\_\+ct\+\_\+init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Initialize an empty BGV ciphertext. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Polynomial ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em c} & Initialized ciphertext \\
+\hline
+ & {\em n} & The ciphertext length (number of underlying polynomials) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_aa59b97302ed9250ca5b4a92ca8245a44}\label{fhe__bgv_8h_aa59b97302ed9250ca5b4a92ca8245a44}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_mul@{bgv\_ct\_mul}}
+\index{bgv\_ct\_mul@{bgv\_ct\_mul}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_mul()}{bgv\_ct\_mul()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$}]{e,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Multiply two BGV ciphertexts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & The encryption of a $\ast$ b \\
+\hline
+ & {\em e} & BGV evaluation key used for auto-\/relinearization \\
+\hline
+ & {\em a} & BGV ciphertext addend \\
+\hline
+ & {\em b} & BGV ciphertext addend\\
+\hline
+\end{DoxyParams}
+Note\+: c will be overwritten by this function and SHOULD NOT overlap with neither the multiplier nor the multiplicand. \mbox{\Hypertarget{fhe__bgv_8h_aff89118a71b00f1b3610fede32679a5e}\label{fhe__bgv_8h_aff89118a71b00f1b3610fede32679a5e}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_relin@{bgv\_ct\_relin}}
+\index{bgv\_ct\_relin@{bgv\_ct\_relin}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_relin()}{bgv\_ct\_relin()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+relin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$const}]{k }\end{DoxyParamCaption})}
+
+
+
+Relinearize a BGV ciphertext in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em c} & The relinearized ciphertext \\
+\hline
+ & {\em k} & The relinierization key\\
+\hline
+\end{DoxyParams}
+Note\+: c will be overwritten by this function. \mbox{\Hypertarget{fhe__bgv_8h_a7daab701884aa48157863e3ca1937a8e}\label{fhe__bgv_8h_a7daab701884aa48157863e3ca1937a8e}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_ct\_serialize@{bgv\_ct\_serialize}}
+\index{bgv\_ct\_serialize@{bgv\_ct\_serialize}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_ct\_serialize()}{bgv\_ct\_serialize()}}
+{\footnotesize\ttfamily void bgv\+\_\+ct\+\_\+serialize (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{c }\end{DoxyParamCaption})}
+
+
+
+Serialize a BGV ciphertext into a byte stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em buf} & Serialized ciphertext byte stream \\
+\hline
+ & {\em c} & Ciphertext to be serialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a7b60a10b93451172998d1268817219d6}\label{fhe__bgv_8h_a7b60a10b93451172998d1268817219d6}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_decrypt@{bgv\_decrypt}}
+\index{bgv\_decrypt@{bgv\_decrypt}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_decrypt()}{bgv\_decrypt()}}
+{\footnotesize\ttfamily void bgv\+\_\+decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$const}]{c,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{s }\end{DoxyParamCaption})}
+
+
+
+Decrypt a BGV ciphertext. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em m} & Resulting plaintext \\
+\hline
+ & {\em c} & BGV ciphertext to be decrypted \\
+\hline
+ & {\em s} & BGV secret key with which to decrypt \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a5dbaf0133588b0f19bb273d77f456de9}\label{fhe__bgv_8h_a5dbaf0133588b0f19bb273d77f456de9}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_encrypt@{bgv\_encrypt}}
+\index{bgv\_encrypt@{bgv\_encrypt}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_encrypt()}{bgv\_encrypt()}}
+{\footnotesize\ttfamily void bgv\+\_\+encrypt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$const}]{b,  }\item[{\mbox{\hyperlink{structbgv__ct__t}{bgv\+\_\+ct\+\_\+t}} $\ast$}]{c,  }\item[{const \mbox{\hyperlink{structbgv__keypair__t}{bgv\+\_\+keypair\+\_\+t}} $\ast$const}]{k,  }\item[{const \mbox{\hyperlink{structpoly__t}{poly\+\_\+t}} $\ast$const}]{m }\end{DoxyParamCaption})}
+
+
+
+Encrypt a polynomial using the BGV scheme. 
+
+
+\begin{DoxyEnumerate}
+\item Sample random secret key $s \in R_2$ (ternary distribution)
+\item Sample random $a \in R_q$ (uniform distribution)
+\item Sample random $e \in R_q$ (error distribution)
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em b} & BGV context \\
+\hline
+\mbox{\texttt{ out}}  & {\em c} & Resulting ciphertext \\
+\hline
+ & {\em k} & BGV public key used for encryption \\
+\hline
+ & {\em m} & Plaintext message used for encryption \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_ab9a3c9d1ed3d36d7697117eeea870823}\label{fhe__bgv_8h_ab9a3c9d1ed3d36d7697117eeea870823}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_free@{bgv\_free}}
+\index{bgv\_free@{bgv\_free}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_free()}{bgv\_free()}}
+{\footnotesize\ttfamily void bgv\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Destroy a BGV struct. Free any memory allocated by the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & BGV context \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a3aeb75e3ccac25c94c6d9d5e9c7991fe}\label{fhe__bgv_8h_a3aeb75e3ccac25c94c6d9d5e9c7991fe}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_init@{bgv\_init}}
+\index{bgv\_init@{bgv\_init}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_init()}{bgv\_init()}}
+{\footnotesize\ttfamily int bgv\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$}]{b,  }\item[{size\+\_\+t}]{lgd,  }\item[{size\+\_\+t}]{lgq,  }\item[{size\+\_\+t}]{lgm,  }\item[{size\+\_\+t}]{t }\end{DoxyParamCaption})}
+
+
+
+Initialize BGV scheme parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & BGV context \\
+\hline
+{\em lgd} & where d is the polynomial ring degree (power of 2) \\
+\hline
+{\em lgq} & the bitlength of the ciphertext modulus q \\
+\hline
+{\em lgm} & the bitlength of the residues in the CRT representation of q \\
+\hline
+{\em t} & the plaintext modulus\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, nonzero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fhe__bgv_8h_a547e88b87dc107cbeadd5da27c2462f7}\label{fhe__bgv_8h_a547e88b87dc107cbeadd5da27c2462f7}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_key\_cmp@{bgv\_key\_cmp}}
+\index{bgv\_key\_cmp@{bgv\_key\_cmp}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_key\_cmp()}{bgv\_key\_cmp()}}
+{\footnotesize\ttfamily int bgv\+\_\+key\+\_\+cmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const}]{a,  }\item[{const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const}]{b }\end{DoxyParamCaption})}
+
+
+
+Test two keys for equality. Returns 1 if keys are equal, 0 otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & BGV Key \\
+\hline
+{\em b} & BGV Key \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a926609968b87f2aa1b2577f173fb18b8}\label{fhe__bgv_8h_a926609968b87f2aa1b2577f173fb18b8}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_key\_deserialize@{bgv\_key\_deserialize}}
+\index{bgv\_key\_deserialize@{bgv\_key\_deserialize}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_key\_deserialize()}{bgv\_key\_deserialize()}}
+{\footnotesize\ttfamily void bgv\+\_\+key\+\_\+deserialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$}]{k,  }\item[{const unsigned char $\ast$const}]{buf }\end{DoxyParamCaption})}
+
+
+
+Deserialize a BGV key pair. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Polynomial ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em k} & Deserialized key pair \\
+\hline
+ & {\em buf} & Serialized key pair \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a74bf638216835b4409947245567252c1}\label{fhe__bgv_8h_a74bf638216835b4409947245567252c1}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_key\_free@{bgv\_key\_free}}
+\index{bgv\_key\_free@{bgv\_key\_free}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_key\_free()}{bgv\_key\_free()}}
+{\footnotesize\ttfamily void bgv\+\_\+key\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$}]{k }\end{DoxyParamCaption})}
+
+
+
+Destroy a BGV key pair Free any memory allocated by the key generation process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & BGV key \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a1895b76e7ae539ef162ee7b5643af85b}\label{fhe__bgv_8h_a1895b76e7ae539ef162ee7b5643af85b}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_key\_serialize@{bgv\_key\_serialize}}
+\index{bgv\_key\_serialize@{bgv\_key\_serialize}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_key\_serialize()}{bgv\_key\_serialize()}}
+{\footnotesize\ttfamily void bgv\+\_\+key\+\_\+serialize (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{const \mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$const}]{k }\end{DoxyParamCaption})}
+
+
+
+Serialize a BGV key pair. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em buf} & Serialized key pair byte stream \\
+\hline
+ & {\em k} & Key pair to be serialized \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_a72d24acb2b2873264728c174443deb3b}\label{fhe__bgv_8h_a72d24acb2b2873264728c174443deb3b}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_key\_zero@{bgv\_key\_zero}}
+\index{bgv\_key\_zero@{bgv\_key\_zero}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_key\_zero()}{bgv\_key\_zero()}}
+{\footnotesize\ttfamily void bgv\+\_\+key\+\_\+zero (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$const}]{r,  }\item[{\mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$}]{k }\end{DoxyParamCaption})}
+
+
+
+Initialize an empty key pair. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em r} & Polynomial ring \\
+\hline
+\mbox{\texttt{ out}}  & {\em k} & Empty key pair \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fhe__bgv_8h_aea3ff4036d914dbea4596659454e1479}\label{fhe__bgv_8h_aea3ff4036d914dbea4596659454e1479}} 
+\index{fhe\_bgv.h@{fhe\_bgv.h}!bgv\_keygen@{bgv\_keygen}}
+\index{bgv\_keygen@{bgv\_keygen}!fhe\_bgv.h@{fhe\_bgv.h}}
+\doxysubsubsection{\texorpdfstring{bgv\_keygen()}{bgv\_keygen()}}
+{\footnotesize\ttfamily void bgv\+\_\+keygen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbgv__t}{bgv\+\_\+t}} $\ast$const}]{b,  }\item[{\mbox{\hyperlink{structbgv__key__t}{bgv\+\_\+key\+\_\+t}} $\ast$}]{k }\end{DoxyParamCaption})}
+
+
+
+Generate a BGV key pair. 
+
+
+\begin{DoxyEnumerate}
+\item Sample random secret key $s \in R_2$ (ternary distribution)
+\item Sample random $a \in R_q$ (uniform distribution)
+\item Sample random $e \in R_q$ (error distribution)
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em b} & BGV context \\
+\hline
+\mbox{\texttt{ out}}  & {\em k} & generated key $ = (s, (e - as, a))$ \\
+\hline
+\end{DoxyParams}

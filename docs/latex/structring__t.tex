@@ -1,0 +1,58 @@
+\hypertarget{structring__t}{}\doxysection{ring\+\_\+t Struct Reference}
+\label{structring__t}\index{ring\_t@{ring\_t}}
+
+
+Main Ring type used to define a polynomial ring.  
+
+
+
+
+{\ttfamily \#include $<$fhe\+\_\+ring.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structring__t_ae351592018f19ed45c12a2b3c0cf83eb}\label{structring__t_ae351592018f19ed45c12a2b3c0cf83eb}} 
+size\+\_\+t {\bfseries lgd}
+\begin{DoxyCompactList}\small\item\em log d where d is the polynomial degree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a146796ce6932aad38eb632ec0f6901a5}\label{structring__t_a146796ce6932aad38eb632ec0f6901a5}} 
+size\+\_\+t {\bfseries d}
+\begin{DoxyCompactList}\small\item\em Polynomial degree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a168d433c5b588962a29ce5d128879b08}\label{structring__t_a168d433c5b588962a29ce5d128879b08}} 
+size\+\_\+t {\bfseries n}
+\begin{DoxyCompactList}\small\item\em Number of residues in the CRT representation of M. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_aa16b34c313cd254d20ff31b093fb9174}\label{structring__t_aa16b34c313cd254d20ff31b093fb9174}} 
+mpz\+\_\+t {\bfseries M}
+\begin{DoxyCompactList}\small\item\em Multiprecision representation of M. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_aead4c86f8924c9225609ed2168f33dfe}\label{structring__t_aead4c86f8924c9225609ed2168f33dfe}} 
+mpz\+\_\+t {\bfseries M\+\_\+half}
+\begin{DoxyCompactList}\small\item\em Multiprecision representation of M/2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_aa0f72a35c1a633f3435692a15675a41f}\label{structring__t_aa0f72a35c1a633f3435692a15675a41f}} 
+mpz\+\_\+t $\ast$ {\bfseries ms}
+\begin{DoxyCompactList}\small\item\em M/m\+\_\+i for each CRT residue m\+\_\+i. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a764c402e78db99a83f73700d41975e1a}\label{structring__t_a764c402e78db99a83f73700d41975e1a}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries roots}
+\begin{DoxyCompactList}\small\item\em Primitive roots of unity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_aa58c074b4fa35043faf4f65a330e2f1b}\label{structring__t_aa58c074b4fa35043faf4f65a330e2f1b}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries iroots}
+\begin{DoxyCompactList}\small\item\em Inverse primitive roots of unity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a1ba1de811e4b21c9bb37826eef0da0f7}\label{structring__t_a1ba1de811e4b21c9bb37826eef0da0f7}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries invms}
+\begin{DoxyCompactList}\small\item\em \mbox{[}M / m\+\_\+i\mbox{]}\+\_\+\{m\+\_\+i\}$^\wedge$-\/1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a5d184039b7d4d115a2a582f08a9c9ed2}\label{structring__t_a5d184039b7d4d115a2a582f08a9c9ed2}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries m}
+\begin{DoxyCompactList}\small\item\em CRT decomposition of M. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_ab5224f9c0711920d1c4b0e06d2be14f8}\label{structring__t_ab5224f9c0711920d1c4b0e06d2be14f8}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries minv}
+\begin{DoxyCompactList}\small\item\em \mbox{[}m\+\_\+i\mbox{]}$^\wedge$-\/1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structring__t_a40f46657ce39c6827900ff64835a14dd}\label{structring__t_a40f46657ce39c6827900ff64835a14dd}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries dinv}
+\begin{DoxyCompactList}\small\item\em \mbox{[}d\mbox{]}\+\_\+\{m\+\_\+i\}$^\wedge$-\/1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main Ring type used to define a polynomial ring. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{fhe__ring_8h}{fhe\+\_\+ring.\+h}}\end{DoxyCompactItemize}

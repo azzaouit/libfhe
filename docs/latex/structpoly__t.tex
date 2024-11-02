@@ -1,0 +1,45 @@
+\hypertarget{structpoly__t}{}\doxysection{poly\+\_\+t Struct Reference}
+\label{structpoly__t}\index{poly\_t@{poly\_t}}
+
+
+Main Polynomial type used to represent polynomials over $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$.  
+
+
+
+
+{\ttfamily \#include $<$fhe\+\_\+poly.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structpoly__t_a152a256b9135a229deaf6aa80c3c543f}\label{structpoly__t_a152a256b9135a229deaf6aa80c3c543f}} 
+\mbox{\hyperlink{structring__t}{ring\+\_\+t}} $\ast$ {\bfseries r}
+\begin{DoxyCompactList}\small\item\em Reference to the base ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structpoly__t_a41aa6da4a48d7575ba0d75a6212cfab7}\label{structpoly__t_a41aa6da4a48d7575ba0d75a6212cfab7}} 
+\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\+\_\+t}} $\ast$ {\bfseries b}
+\begin{DoxyCompactList}\small\item\em Polynomial coefficients. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structpoly__t_a9517a218ee309bbea901e9109658a12d}{is\+\_\+ntt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main Polynomial type used to represent polynomials over $R = Z_M[X] / <x^d + 1>$ for a generic modulus $M$. 
+
+Polynomials are represented using the ring isomorphism provided by the Chinese Remainder Theorem.
+
+Namely, a polynomial with coefficients mod $M$ is decomposed into $n$ polynomials with coefficients mod $m_i$ of degree $d$ where $ M = \prod_i m_i $.
+
+Residues $m_i$ are pairwise coprime word-\/sized integers (typically between 32-\/60 bits) 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structpoly__t_a9517a218ee309bbea901e9109658a12d}\label{structpoly__t_a9517a218ee309bbea901e9109658a12d}} 
+\index{poly\_t@{poly\_t}!is\_ntt@{is\_ntt}}
+\index{is\_ntt@{is\_ntt}!poly\_t@{poly\_t}}
+\doxysubsubsection{\texorpdfstring{is\_ntt}{is\_ntt}}
+{\footnotesize\ttfamily char poly\+\_\+t\+::is\+\_\+ntt}
+
+Boolean Flag marks whether the polynomial is in coefficient or evaluation form 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{fhe__poly_8h}{fhe\+\_\+poly.\+h}}\end{DoxyCompactItemize}

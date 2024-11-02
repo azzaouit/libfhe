@@ -1,0 +1,67 @@
+\hypertarget{fhe__poly_8h_source}{}\doxysection{fhe\+\_\+poly.\+h}
+\label{fhe__poly_8h_source}\index{include/fhe\_poly.h@{include/fhe\_poly.h}}
+\mbox{\hyperlink{fhe__poly_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// libfhe}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// This program is free software: you can redistribute it and/or modify}}
+\DoxyCodeLine{4 \textcolor{comment}{// it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{5 \textcolor{comment}{// the Free Software Foundation, either version 3 of the License, or}}
+\DoxyCodeLine{6 \textcolor{comment}{// (at your option) any later version.}}
+\DoxyCodeLine{7 \textcolor{comment}{//}}
+\DoxyCodeLine{8 \textcolor{comment}{// This program is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{9 \textcolor{comment}{// but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{10 \textcolor{comment}{// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{11 \textcolor{comment}{// GNU General Public License for more details.}}
+\DoxyCodeLine{12 \textcolor{comment}{//}}
+\DoxyCodeLine{13 \textcolor{comment}{// You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{14 \textcolor{comment}{// along with this program.  If not, see <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{15 \textcolor{comment}{//}}
+\DoxyCodeLine{16 \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{23 \textcolor{comment}{}\textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef FHE\_POLY\_H}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define FHE\_POLY\_H}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fhe__ring_8h}{fhe\_ring.h}}"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpoly__t}{poly\_t}} \{}
+\DoxyCodeLine{46   \mbox{\hyperlink{structring__t}{ring\_t}} *\mbox{\hyperlink{structpoly__t_a152a256b9135a229deaf6aa80c3c543f}{r}};   }
+\DoxyCodeLine{47   \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\_t}} *\mbox{\hyperlink{structpoly__t_a41aa6da4a48d7575ba0d75a6212cfab7}{b}};   }
+\DoxyCodeLine{48   \textcolor{keywordtype}{char} \mbox{\hyperlink{structpoly__t_a9517a218ee309bbea901e9109658a12d}{is\_ntt}}; }
+\DoxyCodeLine{50 \} \mbox{\hyperlink{fhe__poly_8h_a6f0764446a7d57267a82c6a5ba5f48fb}{poly\_t}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{58 \textcolor{keywordtype}{int} \mbox{\hyperlink{fhe__poly_8h_aa2fd0b0531f5e5563f6fccd93ff01127}{poly\_zero}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_adc4bc5429ff768846c4b829560e8bed3}{poly\_encode}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \textcolor{keyword}{const} \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\_t}} *\textcolor{keyword}{const} u, \mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_abf2c559b0489922d9e790b30aa03bd1c}{poly\_decode}}(\mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\_t}} *out, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} p, \mbox{\hyperlink{fhe__config_8h_a450810b50e004453e2cd8dfd1aa5600f}{uint\_t}} t);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_ad92a4c9c41abfd8fedada4b9fd1347d0}{poly\_ntt}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a62a571fc87dd74a3f40a46c4060f8d5a}{poly\_intt}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a0be6af0e5d59a291b9d049d072a39297}{poly\_clone}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *dst, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} src);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a55b44eb459f0aedd355bf1bc7b616338}{poly\_cmul}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *out, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} in, \mbox{\hyperlink{fhe__config_8h_acd83a2e40eb7c5934d6ce306e10712ec}{int\_t}} c);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a1094068aabbcc5d275c55f24cd62c495}{poly\_rand}}(\textcolor{keyword}{const} \mbox{\hyperlink{structring__t}{ring\_t}} *\textcolor{keyword}{const} r, \mbox{\hyperlink{structpoly__t}{poly\_t}} *out, \mbox{\hyperlink{fhe__config_8h_ade80fdcd8f2dde57393f56d0cdfaeed0}{DISTRIBUTION}} d);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a467965041a721858cc166fb4a0cfde6a}{poly\_neg}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a8107767e738e254ae1c611383de74bbf}{poly\_add}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{140 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a133587a8012f7107f72bd0d8f96e24e4}{poly\_sub}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{149 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a7457e694f74fe540afd3090519bdd6ef}{poly\_mul}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a2dfb7bf38877914d116055e51cb72341}{poly\_serialize}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} p);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{165 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_ab77246782d321234c4520710a6b59cad}{poly\_deserialize}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *p, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} buf);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{174 \textcolor{keywordtype}{int} \mbox{\hyperlink{fhe__poly_8h_a10268c2dbf40959021c9b434c12d808a}{poly\_cmp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} a, \textcolor{keyword}{const} \mbox{\hyperlink{structpoly__t}{poly\_t}} *\textcolor{keyword}{const} b);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{182 \textcolor{keywordtype}{void} \mbox{\hyperlink{fhe__poly_8h_a9e85b160adf40e93b417e9ba9e6d39b4}{poly\_free}}(\mbox{\hyperlink{structpoly__t}{poly\_t}} *p);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FHE\_POLY\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
